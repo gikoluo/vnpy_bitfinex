@@ -7,7 +7,8 @@ from urllib.parse import urlencode
 from typing import Dict, Any, List, Tuple
 import pytz
 
-from vnpy_rest import Request, RestClient, Response
+from vnpy_evo.rest import Request, RestClient, Response
+#from vnpy_rest import Request, RestClient, Response
 from vnpy_websocket import WebsocketClient
 from vnpy.trader.event import EVENT_TIMER
 from vnpy.event import Event, EventEngine
@@ -612,7 +613,7 @@ class BitfinexWebsocketApi(WebsocketClient):
         account: AccountData = AccountData(
             accountid=str(data[1]),
             balance=float(data[2]),
-            available=0.0,
+            # available=0.0,
             frozen=0.0,
             gateway_name=self.gateway_name
         )
